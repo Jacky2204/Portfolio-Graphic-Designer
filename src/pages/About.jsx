@@ -86,7 +86,7 @@ function About() {
           <div className="w-full h-96 flex items-center justify-center overflow-hidden">
             <div className="w-64 h-64 rounded-full overflow-hidden">
               <img 
-                src="./../../public/boy.jpg" 
+                src="https://i.pinimg.com/originals/96/75/1f/96751fd1951cd1872c4b65915c8f9780.jpg" 
                 alt="Ajinkya Pandit - Portfolio Person" 
                 className="w-full h-full object-cover"
               />

@@ -87,8 +87,8 @@ function HeroSection() {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <img 
-              src="./../../public/boy.jpg" 
-              alt="Boy Portfolio Person" 
+              src="https://i.pinimg.com/originals/96/75/1f/96751fd1951cd1872c4b65915c8f9780.jpg" 
+              alt="Ajinkya Pandit - Portfolio Person" 
               className="w-full h-full object-cover"
             />
             {/* Animated border */}
