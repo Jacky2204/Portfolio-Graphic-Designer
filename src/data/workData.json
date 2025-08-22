@@ -1,4 +1,24 @@
 {
+  "categories": [
+    "All",
+    "Branding",
+    "Digital Marketing",
+    "Print Design",
+    "Digital Design",
+    "Packaging",
+    "Event Design"
+  ],
+  "pageContent": {
+    "header": {
+      "title": "My Portfolio",
+      "description": "Explore my latest creative projects and see how I bring ideas to life through design. Each project represents a unique challenge and creative solution."
+    },
+    "callToAction": {
+      "title": "Ready to Start Your Project?",
+      "description": "Let's work together to bring your creative vision to life. Get in touch to discuss your project.",
+      "buttonText": "Start Your Project"
+    }
+  },
   "projects": [
     {
       "id": 1,
@@ -180,29 +200,5 @@
       "challenge": "Create a memorable brand experience that unifies all aspects of the conference.",
       "solution": "Developed a dynamic visual system that adapts across all touchpoints while maintaining strong brand recognition."
     }
-  ],
-
-
-
-  
-  "categories": [
-    "All",
-    "Branding",
-    "Digital Marketing",
-    "Print Design",
-    "Digital Design",
-    "Packaging",
-    "Event Design"
-  ],
-  "pageContent": {
-    "header": {
-      "title": "My Portfolio",
-      "description": "Explore my latest creative projects and see how I bring ideas to life through design. Each project represents a unique challenge and creative solution."
-    },
-    "callToAction": {
-      "title": "Ready to Start Your Project?",
-      "description": "Let's work together to bring your creative vision to life. Get in touch to discuss your project.",
-      "buttonText": "Start Your Project"
-    }
-  }
+  ]
 }
