@@ -18,6 +18,7 @@ function Work() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageErrors, setImageErrors] = useState({});
 
   // Extract data from JSON
   const { projects, categories, pageContent } = workData;
@@ -26,6 +27,10 @@ function Work() {
     selectedCategory === "All"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
+
+  const handleImageError = (projectId) => {
+    setImageErrors((prev) => ({ ...prev, [projectId]: true }));
+  };
 
   const openProjectModal = (project) => {
     setSelectedProject(project);
@@ -121,7 +126,17 @@ function Work() {
               <Card className="overflow-hidden rounded-2xl shadow-lg card-hover p-0">
                 <div className="relative overflow-hidden">
                   <div className="w-full h-64 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-                    <Brush size={64} className="text-red-500/50" />
+                    {!imageErrors[project.id] && project.image ? (
+                      <img
+                        src={project.image}
+                        alt={`${project.title} - ${project.category}`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        onError={() => handleImageError(project.id)}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <Brush size={64} className="text-red-500/50" />
+                    )}
                   </div>
                   <div className="absolute top-4 right-4">
                     <span className="px-3 py-1 bg-red-500/90 text-white text-sm rounded-full">
@@ -243,8 +258,17 @@ function Work() {
             <div className="p-8">
               <div className="grid lg:grid-cols-2 gap-8">
                 {/* Project Image */}
-                <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl h-80 flex items-center justify-center">
-                  <Brush size={80} className="text-red-500/50" />
+                <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl h-80 flex items-center justify-center overflow-hidden">
+                  {selectedProject.image ? (
+                    <img
+                      src={selectedProject.image}
+                      alt={`${selectedProject.title} - ${selectedProject.category}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <Brush size={80} className="text-red-500/50" />
+                  )}
                 </div>
 
                 {/* Project Details */}

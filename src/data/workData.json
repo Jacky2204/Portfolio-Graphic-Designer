@@ -36,7 +36,7 @@
       "title": "Marketing Campaign",
       "category": "Digital Marketing",
       "description": "Social media campaign for retail brand",
-      "image": "/marketing-campaign.jpg",
+      "image": "https://powertextor.com/blogs/wp-content/uploads/2023/07/Digital-Marketing-Examples-scaled.jpg",
       "tags": [
         "Social Media",
         "Digital Ads",
@@ -66,7 +66,7 @@
       "title": "Print Design Collection",
       "category": "Print Design",
       "description": "Brochures, business cards, and packaging",
-      "image": "/print-design.jpg",
+      "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/dfa882187277807.6584aef8394f2.jpg",
       "tags": [
         "Print",
         "Packaging",
@@ -96,7 +96,7 @@
       "title": "Web Graphics & UI",
       "category": "Digital Design",
       "description": "Website graphics and user interface elements",
-      "image": "/web-graphics.jpg",
+      "image": "https://static.vecteezy.com/system/resources/previews/000/388/035/original/various-website-interface-design-vector.jpg",
       "tags": [
         "UI/UX",
         "Web Design",
@@ -126,7 +126,7 @@
       "title": "Product Packaging",
       "category": "Packaging",
       "description": "Creative packaging design for consumer products",
-      "image": "/packaging.jpg",
+      "image": "https://packaginghub.com/wp-content/uploads/2023/06/Types-of-Product-Packaging.webp",
       "tags": [
         "Packaging",
         "Product Design",
@@ -155,7 +155,7 @@
       "title": "Event Branding",
       "category": "Event Design",
       "description": "Complete branding for major industry conference",
-      "image": "/event-branding.jpg",
+      "image": "https://brandbuildr.ai/wp-content/uploads/2024/04/8-Inspiring-Event-Branding-Examples.jpg",
       "tags": [
         "Event Design",
         "Branding",
@@ -181,6 +181,10 @@
       "solution": "Developed a dynamic visual system that adapts across all touchpoints while maintaining strong brand recognition."
     }
   ],
+
+
+
+  
   "categories": [
     "All",
     "Branding",
