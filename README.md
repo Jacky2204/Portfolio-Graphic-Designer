@@ -95,9 +95,7 @@ Modify `src/index.css` for custom CSS classes and animations.
 The project can be deployed to any static hosting service:
 
 - Vercel
-- Netlify
-- GitHub Pages
-- AWS S3
+
 
 ## License
 
