@@ -12,174 +12,15 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import workData from "../data/workData.json";
 
 function Work() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Brand Identity Design",
-      category: "Branding",
-      description: "Complete brand identity for tech startup",
-      image: "/brand-identity.jpg",
-      tags: ["Logo Design", "Brand Guidelines", "Visual Identity"],
-      year: "2024",
-      fullDescription:
-        "A comprehensive brand identity project for TechStart, a revolutionary fintech startup. This project included logo design, brand guidelines, color palette, typography system, and complete visual identity guidelines. The design focuses on trust, innovation, and accessibility, using a modern geometric approach with a carefully selected color scheme that conveys both professionalism and forward-thinking.",
-      client: "TechStart Inc.",
-      duration: "3 weeks",
-      tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
-      deliverables: [
-        "Primary Logo",
-        "Secondary Logos",
-        "Brand Guidelines",
-        "Business Cards",
-        "Letterhead",
-        "Social Media Templates",
-      ],
-      challenge:
-        "Create a brand that stands out in the crowded fintech space while maintaining trust and credibility.",
-      solution:
-        "Developed a distinctive geometric logo with a modern color palette and comprehensive brand system that scales across all touchpoints.",
-    },
-    {
-      id: 2,
-      title: "Marketing Campaign",
-      category: "Digital Marketing",
-      description: "Social media campaign for retail brand",
-      image: "/marketing-campaign.jpg",
-      tags: ["Social Media", "Digital Ads", "Content Creation"],
-      year: "2024",
-      fullDescription:
-        "A comprehensive digital marketing campaign for RetailPlus, including social media graphics, digital advertisements, and content creation. The campaign focused on seasonal promotions and brand awareness, resulting in significant engagement increases and sales growth.",
-      client: "RetailPlus",
-      duration: "6 weeks",
-      tools: ["Adobe Photoshop", "Adobe Illustrator", "Canva Pro"],
-      deliverables: [
-        "Social Media Graphics",
-        "Digital Ads",
-        "Email Templates",
-        "Banner Designs",
-        "Content Calendar",
-      ],
-      challenge:
-        "Create engaging content that drives both brand awareness and sales conversions.",
-      solution:
-        "Developed a cohesive visual strategy with consistent branding and compelling call-to-actions across all platforms.",
-    },
-    {
-      id: 3,
-      title: "Print Design Collection",
-      category: "Print Design",
-      description: "Brochures, business cards, and packaging",
-      image: "/print-design.jpg",
-      tags: ["Print", "Packaging", "Marketing Materials"],
-      year: "2023",
-      fullDescription:
-        "A complete print design collection for EcoProducts, including product packaging, marketing brochures, and business materials. The design emphasizes sustainability and eco-friendliness while maintaining strong visual appeal.",
-      client: "EcoProducts",
-      duration: "4 weeks",
-      tools: ["Adobe InDesign", "Adobe Illustrator", "Adobe Photoshop"],
-      deliverables: [
-        "Product Packaging",
-        "Marketing Brochures",
-        "Business Cards",
-        "Letterhead",
-        "Product Catalogs",
-      ],
-      challenge:
-        "Design packaging that reflects eco-friendly values while being commercially appealing.",
-      solution:
-        "Used sustainable design principles with natural color palettes and organic shapes that communicate environmental responsibility.",
-    },
-    {
-      id: 4,
-      title: "Web Graphics & UI",
-      category: "Digital Design",
-      description: "Website graphics and user interface elements",
-      image: "/web-graphics.jpg",
-      tags: ["UI/UX", "Web Design", "Digital Graphics"],
-      year: "2023",
-      fullDescription:
-        "Modern web graphics and UI elements for NextGen, a technology consulting company. The project included website graphics, user interface components, and digital assets that enhance user experience and brand consistency.",
-      client: "NextGen",
-      duration: "5 weeks",
-      tools: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
-      deliverables: [
-        "Website Graphics",
-        "UI Components",
-        "Icon Sets",
-        "Digital Assets",
-        "Style Guide",
-      ],
-      challenge:
-        "Create intuitive and visually appealing UI elements that improve user experience.",
-      solution:
-        "Developed a clean, modern design system with consistent visual language and intuitive navigation elements.",
-    },
-    {
-      id: 5,
-      title: "Product Packaging",
-      category: "Packaging",
-      description: "Creative packaging design for consumer products",
-      image: "/packaging.jpg",
-      tags: ["Packaging", "Product Design", "Branding"],
-      year: "2023",
-      fullDescription:
-        "Innovative packaging design for Creative Solutions' premium product line. The packaging combines functionality with aesthetic appeal, using sustainable materials and modern design principles to create memorable unboxing experiences.",
-      client: "Creative Solutions",
-      duration: "4 weeks",
-      tools: ["Adobe Illustrator", "Adobe InDesign", "3D Mockup Tools"],
-      deliverables: [
-        "Primary Packaging",
-        "Secondary Packaging",
-        "Display Materials",
-        "Installation Guide",
-      ],
-      challenge:
-        "Design packaging that protects products while creating an engaging unboxing experience.",
-      solution:
-        "Created layered packaging with premium materials and thoughtful design details that enhance product perception.",
-    },
-    {
-      id: 6,
-      title: "Event Branding",
-      category: "Event Design",
-      description: "Complete branding for major industry conference",
-      image: "/event-branding.jpg",
-      tags: ["Event Design", "Branding", "Marketing"],
-      year: "2022",
-      fullDescription:
-        "Complete event branding for DesignCon 2022, a major design industry conference. The project included logo design, promotional materials, stage design, and all event collateral that created a cohesive and memorable brand experience.",
-      client: "DesignCon",
-      duration: "8 weeks",
-      tools: ["Adobe Creative Suite", "Sketch", "Figma"],
-      deliverables: [
-        "Event Logo",
-        "Promotional Materials",
-        "Stage Design",
-        "Digital Assets",
-        "Print Collateral",
-      ],
-      challenge:
-        "Create a memorable brand experience that unifies all aspects of the conference.",
-      solution:
-        "Developed a dynamic visual system that adapts across all touchpoints while maintaining strong brand recognition.",
-    },
-  ];
-
-  const categories = [
-    "All",
-    "Branding",
-    "Digital Marketing",
-    "Print Design",
-    "Digital Design",
-    "Packaging",
-    "Event Design",
-  ];
+  // Extract data from JSON
+  const { projects, categories, pageContent } = workData;
 
   const filteredProjects =
     selectedCategory === "All"
@@ -229,11 +70,11 @@ function Work() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-6xl font-bold mb-6">My Portfolio</h1>
+          <h1 className="text-6xl font-bold mb-6">
+            {pageContent.header.title}
+          </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Explore my latest creative projects and see how I bring ideas to
-            life through design. Each project represents a unique challenge and
-            creative solution.
+            {pageContent.header.description}
           </p>
         </motion.div>
 
@@ -328,11 +169,10 @@ function Work() {
           className="text-center mt-20"
         >
           <h3 className="text-3xl font-bold mb-6">
-            Ready to Start Your Project?
+            {pageContent.callToAction.title}
           </h3>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Let's work together to bring your creative vision to life. Get in
-            touch to discuss your project.
+            {pageContent.callToAction.description}
           </p>
           <Link to="/contact">
             <motion.button
@@ -340,7 +180,7 @@ function Work() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              Start Your Project <ArrowRight size={20} />
+              {pageContent.callToAction.buttonText} <ArrowRight size={20} />
             </motion.button>
           </Link>
         </motion.div>
